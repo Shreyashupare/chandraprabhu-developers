@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="emojis.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        .business-toggle {
+            background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .business-toggle:hover {
+            background-color: #ff99cc;
+        }
+        .business-entities {
+            display: block;
+            margin-top: 20px;
+        }
+        .entity-grid {
+            display: flex;
+            justify-content: space-between;
+        }
+        .entity {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            margin: 10px;
+        }
+        .entity-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .entity-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .entity-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .rainbow-button {
+            background-image: linear-gradient(to right, #ff69b4, #ffa07a, #ffff00, #008000, #0000ff, #4b0082);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .rainbow-button:hover {
+            background-image: linear-gradient(to right, #ff99cc, #ffd7be, #ffff66, #00b300, #0066cc, #7a288a);
+        }
+        .rainbow-text {
+            background-image: linear-gradient(to right, #ff69b4, #ffa07a, #ffff00, #008000, #0000ff, #4b0082);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .blink {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .rsvp-quote {
+            margin: 20px 0;
+        }
+        .quote-content {
+            text-align: center;
+        }
+        .decorative-line {
+            width: 100px;
+            height: 2px;
+            background-color: #ff69b4;
+            margin: 10px auto;
+        }
+        .quote-text {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        #audioTrigger {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+        .audioTriggerContent {
+            text-align: center;
+        }
+        .audioTriggerContent i {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .rsvp-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .groom-namaste, .bride-namaste {
+            margin: 0 20px;
+        }
+        .namaste-image {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <audio id="backgroundMusic" preload="auto">
+        <source src="assets/wedding-song.mp3" type="audio/mpeg">
+    </audio>
+    <div id="audioTrigger" onclick="startAudio()">
+        <div class="audioTriggerContent">
+            <i class="fas fa-music"></i>
+            <span>Play Music 🎶</span>
+        </div>
+    </div>
+    <!-- Emoji Container -->
+    <div class="emoji-container"></div>
+    <!-- Logo Section -->
+    <div class="logo-container">
+        <div class="logo-left">
+            <!-- Add your left logo image here -->
+            <img src="assets/jain-logo.png" alt="Family Logo">
+        </div>
+        <div class="logo-right">
+            <!-- Add your right logo image here -->
+            <img src="assets/shantisagar-maharaj.png" alt="Family Logo">
+        </div>
+    </div>
+
+    <!-- Main Title -->
+    <div class="welcome-title">
+        <p>|| Jai Jinendra ||</p>
+    </div>
+
+    <!-- Wedding Invitation Title -->
+    <div class="invitation-title">
+        <h1><b>Wedding Invitation</b></h1>
+        <div class="marriage-quote">
+            <p class="marathi-quote">"|| जीवनातील सर्व अनुभवांमध्ये तुम्ही आणि मी, मरणातील सर्व अनुभवांमध्ये तुम्ही आणि मी, जन्मातील सर्व अनुभवांमध्ये तुम्ही आणि मी ||"</p>
+            <p class="english-quote">"|| In all the experiences of life, you and I, in all the experiences of death, you and I, in all the experiences of birth, you and I ||"</p>
+        </div>
+    </div>
+
+    <!-- Background Video Section -->
+    <div class="video-background">
+        <video autoplay muted loop id="bgVideo">
+            <!-- Add your background video here -->
+            <source src="assets/wedding-video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Couple Information Section -->
+    <div class="couple-container">
+        <!-- Common Couple Photo -->
+        <div class="couple-photo-container">
+            <img src="assets/couple-photo.jpg" alt="Bride and Groom" class="couple-photo">
+            <div class="couple-names">
+                <h2>Vrushabh & Prachita</h2>
+            </div>
+        </div>
+
+        <!-- Individual Photos -->
+        <div class="couple-info">
+            <div class="individual-photo groom-photo">
+                <img src="assets/groom.jpg" alt="Vrushabh" class="fade-in">
+                <div class="photo-details">
+                    <h2>Vrushabh</h2>
+                    <p>Son of Mahavir & Rajashri Hupare</p>
+                </div>
+            </div>
+            <div class="individual-photo bride-photo">
+                <img src="assets/bride.jpg" alt="Prachita" class="fade-in">
+                <div class="photo-details">
+                    <h2>Prachita</h2>
+                    <p>Daughter of Rajendra & Suryavanshi</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Countdown Timer -->
+    <div class="countdown-container">
+        <h2>Wedding Date Countdown</h2>
+        <div class="countdown">
+            <div class="countdown-item">
+                <span id="days">00</span>
+                <span>Days</span>
+            </div>
+            <div class="countdown-item">
+                <span id="hours">00</span>
+                <span>Hours</span>
+            </div>
+            <div class="countdown-item">
+                <span id="minutes">00</span>
+                <span>Minutes</span>
+            </div>
+            <div class="countdown-item">
+                <span id="seconds">00</span>
+                <span>Seconds</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Details Section -->
+    <div class="event-details" style="background-image: url('assets/event-bg.jpg');">
+        <div class="event-content">
+            <h2 class="event-timing-title">Event Timing</h2>
+            <div class="event-info">
+                <div class="event-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="event-details-text">
+                        <h3>Date</h3>
+                        <p>08th May 2025</p>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="event-details-text">
+                        <h3>Time</h3>
+                        <p>1:30 PM</p>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <i class="fas fa-star"></i>
+                    <div class="event-details-text">
+                        <h3>Muhurt</h3>
+                        <p>2:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Location Section -->
+    <div class="location-container">
+        <h2>Wedding Venue</h2>
+        <div class="venue-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.7293629046408!2d74.40074307520615!3d16.690421084082676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc102aa8f9a5cb3%3A0x4340f7b02327941e!2sMangaldham%20Rui!5e0!3m2!1sen!2sin!4v1744468564902!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="venue-details">
+            <h3>Jain Sanskrutik Bhavan Mangaldham</h3>
+            <p>Rui, 416116</p>
+        </div>
+    </div>
+    <!-- Ending Quote Section -->
+    <div class="rsvp-quote">
+        <div class="quote-content">
+            <div class="decorative-line"></div>
+            <p class="quote-text">Your presence and blessings are the most precious gifts we could ask for on our special day</p>
+            <div class="decorative-line"></div>
+            <br>
+            <p>Please confirm your attendance</p>
+            <div class="rsvp-section">
+                <div class="groom-namaste">
+                    <img src="assets/groom-namaste.png" alt="Groom Namaste" class="namaste-image">
+                </div>
+                <button class="rsvp-button" onclick="window.open('https://forms.gle/he1RdVgnYfbjtE3bA', '_blank')">RSVP Now</button>
+                <div class="bride-namaste">
+                    <img src="assets/bride-namaste.png" alt="Bride Namaste" class="namaste-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>&copy; 2025 Wedding Invitation by Chandraprabhu Firm</p>
+                <div class="business-indicator">
+                    <span class="rainbow-text">Check Out Our Services</span>
+                    <i class="fas fa-chevron-down blink"></i>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 8421182115</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>your.email@example.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <a href="https://maps.app.goo.gl/Woa25AAu98RUMBrz8" target="_blank" class="map-link">
+                            <span><i class="fas fa-map-marker-alt"></i>
+                            <p>Mahavir Traders</p></span>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="https://instagram.com/yourprofile" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Business Entities Section -->
+        <div class="business-entities">
+            <div class="entity-grid">
+                <div class="entity" style="background-image: url('assets/arihantEvents-bg.jpg');">
+                    <div class="entity-content">
+                        <div class="entity-logo">
+                            <img src="business1-logo.png" alt="Business 1 Logo">
+                        </div>
+                        <h4>Arihant Events</h4>
+                        <p>Professional event decoration services for baby showers, weddings, engagements, birthdays</p>
+                        <h5>Proprietor: Mr. Arihant Murchite</h5>
+                        <p>Mobile: +91 9175368863</p>
+                        <p class="address">Near Mahavir Traders, Rui, 416116</p>
+                    </div>
+                </div>
+                <div class="entity" style="background-image: url('business2-bg.jpg');">
+                    <div class="entity-content">
+                        <div class="entity-logo">
+                            <img src="business2-logo.png" alt="Business 2 Logo">
+                        </div>
+                        <h4>Mahavir Traders</h4>
+                        <p>Supplier of all types of building materials including cement, crush, bricks, and more.</p>
+                        <h5>Proprietor: Mr. Vrushabh Hupare</h5>
+                        <p>Mobile: +91 7028671396</p>
+                        <p class="address">Near Rajmane Highschool, Rui, 416116</p>
+                    </div>
+                </div>
+                <div class="entity" style="background-image: url('assets/RajshreeHardwares-bg.jpeg');">
+                    <div class="entity-content">
+                        <div class="entity-logo">
+                            <img src="assets/RajshreeHardwares-logo.png" alt="Rajshree Hardwares Logo">
+                        </div>
+                        <h4>Rajshree Hardwares</h4>
+                        <p>All types of hardware—pipes, bolts, fittings & more.</p>
+                        <h5>Proprietor: Mr. Vrushabh Hupare</h5>
+                        <p>Mobile: +91 9764470013</p>
+                        <p class="address">Near Karmveer Multistate, Rui, 416116</p>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-credit"><i class="fas fa-code"></i> With ❤️ by Shreyas</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="emojis.js"></script>
+    <script>
+        // Audio control variables
+        let isPlaying = false;
+        const audio = document.getElementById('backgroundMusic');
+        
+        // Function to start audio
+        function startAudio() {
+            audio.play().catch(error => {
+                console.log('Audio playback failed:', error);
+            });
+            isPlaying = true;
+            // Hide the trigger after first play
+            document.getElementById('audioTrigger').style.display = 'none';
+        }
+
+        // Initialize audio
+        audio.loop = true;
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
