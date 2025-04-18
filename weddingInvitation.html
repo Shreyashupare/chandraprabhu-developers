@@ -31,15 +31,6 @@
             display: flex;
             justify-content: space-between;
         }
-        .entity {
-            background-color: #f7f7f7;
-            padding: 20px;
-            border: 1px solid #ddd;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            flex: 1;
-            margin: 10px;
-        }
         .entity-content {
             display: flex;
             flex-direction: column;
@@ -149,7 +140,12 @@
         </div>
     </div>
     <!-- Emoji Container -->
-    <div class="emoji-container"></div>
+    <div class="emoji-container">
+        <div class="emoji-prompt" style="text-align:center; margin-top:10px;">
+            <span class="blinking-finger blink" style="font-size:2rem; display:inline-block;">👇</span>
+            <span class="emoji-click-text blink" style="font-size:1rem; color:red; margin-left:8px;">Congrats</span>
+        </div>
+    </div>
     <!-- Logo Section -->
     <div class="logo-container">
         <div class="logo-left">
@@ -171,8 +167,7 @@
     <div class="invitation-title">
         <h1><b>Wedding Invitation</b></h1>
         <div class="marriage-quote">
-            <p class="marathi-quote">"|| जीवनातील सर्व अनुभवांमध्ये तुम्ही आणि मी, मरणातील सर्व अनुभवांमध्ये तुम्ही आणि मी, जन्मातील सर्व अनुभवांमध्ये तुम्ही आणि मी ||"</p>
-            <p class="english-quote">"|| In all the experiences of life, you and I, in all the experiences of death, you and I, in all the experiences of birth, you and I ||"</p>
+            <p class="marathi-quote">|| In all the experiences of life, you and I, in all the experiences of death, you and I, in all the experiences of birth, you and I ||</p>
         </div>
     </div>
 
@@ -207,7 +202,7 @@
                 <img src="assets/bride.jpg" alt="Prachita" class="fade-in">
                 <div class="photo-details">
                     <h2>Prachita</h2>
-                    <p>Daughter of Rajendra & Suryavanshi</p>
+                    <p>Daughter of Rajendra & Drakshayani Survashi</p>
                 </div>
             </div>
         </div>
@@ -252,14 +247,14 @@
                     <i class="fas fa-clock"></i>
                     <div class="event-details-text">
                         <h3>Time</h3>
-                        <p>1:30 PM</p>
+                        <p>1:34 PM</p>
                     </div>
                 </div>
                 <div class="event-item">
                     <i class="fas fa-star"></i>
                     <div class="event-details-text">
                         <h3>Muhurt</h3>
-                        <p>2:00 PM</p>
+                        <p>Vaishakh Shukla 11, Shake 1947</p>
                     </div>
                 </div>
             </div>
@@ -273,7 +268,7 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.7293629046408!2d74.40074307520615!3d16.690421084082676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc102aa8f9a5cb3%3A0x4340f7b02327941e!2sMangaldham%20Rui!5e0!3m2!1sen!2sin!4v1744468564902!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="venue-details">
-            <h3>Jain Sanskrutik Bhavan Mangaldham</h3>
+            <a href="https://maps.app.goo.gl/U6AhUAqXfYZUhQq3A" target="_blank" class="map-link" style="display:block; text-align:center;"><h3 style="margin:0;">Jain Sanskrutik Bhavan Mangaldham</h3></a>
             <p>Rui, 416116</p>
         </div>
     </div>
@@ -284,12 +279,13 @@
             <p class="quote-text">Your presence and blessings are the most precious gifts we could ask for on our special day</p>
             <div class="decorative-line"></div>
             <br>
-            <p>Please confirm your attendance</p>
+            <!-- <p>Please confirm your attendance</p> -->
             <div class="rsvp-section">
                 <div class="groom-namaste">
                     <img src="assets/groom-namaste.png" alt="Groom Namaste" class="namaste-image">
                 </div>
-                <button class="rsvp-button" onclick="window.open('https://forms.gle/he1RdVgnYfbjtE3bA', '_blank')">RSVP Now</button>
+                <!-- Add If requiredonclick="window.open('https://forms.gle/he1RdVgnYfbjtE3bA', '_blank') -->
+                <button class="rsvp-button">Thank You</button>
                 <div class="bride-namaste">
                     <img src="assets/bride-namaste.png" alt="Bride Namaste" class="namaste-image">
                 </div>
@@ -301,7 +297,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-left">
-                <p>&copy; 2025 Wedding Invitation by Chandraprabhu Firm</p>
+                <p>&copy; 2025 Wedding Invitation by Chandraprabhu Developers</p>
                 <div class="business-indicator">
                     <span class="rainbow-text">Check Out Our Services</span>
                     <i class="fas fa-chevron-down blink"></i>
@@ -312,20 +308,19 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <p>+91 8421182115</p>
+                        <a href="tel:+918421182115" style="color:inherit;text-decoration:none;"><p>+91 8421182115</p></a>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <p>your.email@example.com</p>
+                        <a href="mailto:mahavirtraders0717@gmail.com" style="color:inherit;text-decoration:none;"></a>
                     </div>
                     <div class="contact-item">
                         <a href="https://maps.app.goo.gl/Woa25AAu98RUMBrz8" target="_blank" class="map-link">
-                            <span><i class="fas fa-map-marker-alt"></i>
-                            <p>Mahavir Traders</p></span>
+                            <span><i class="fas fa-map-marker-alt"></i></span>
                         </a>
                     </div>
                     <div class="contact-item">
-                        <a href="https://instagram.com/yourprofile" target="_blank">
+                        <a href="https://www.instagram.com/arihantevent2023" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
@@ -336,40 +331,76 @@
         <!-- Business Entities Section -->
         <div class="business-entities">
             <div class="entity-grid">
-                <div class="entity" style="background-image: url('assets/arihantEvents-bg.jpg');">
+                <div class="entity" style="background-image: url('assets/AE-bg.jpg');">
                     <div class="entity-content">
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                            <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: bold;">Mr. Arihant Murchite</span>
+                            <a href="tel:+919175368863" style="color:inherit;text-decoration:none;"><span style="font-size: 0.85rem; color: var(--primary-color);"><i class="fas fa-phone"></i>+91 9175368863</span></a>
+                        </div>
                         <div class="entity-logo">
-                            <img src="business1-logo.png" alt="Business 1 Logo">
+                            <img src="assets/AE-logo.jpeg" alt="Arihant Events">
                         </div>
                         <h4>Arihant Events</h4>
-                        <p>Professional event decoration services for baby showers, weddings, engagements, birthdays</p>
-                        <h5>Proprietor: Mr. Arihant Murchite</h5>
-                        <p>Mobile: +91 9175368863</p>
-                        <p class="address">Near Mahavir Traders, Rui, 416116</p>
+                        <p>Professional decoration services for all kinds of functions.</p>
+                        <a href="https://maps.app.goo.gl/k5DvgGEm9UBC8k7b8" target="_blank" class="map-link">
+                            <span><i class="fas fa-map-marker-alt"></i>
+                            <p class="address">Near Mahavir Traders, Rui, 416116</p></span>
+                        </a>
                     </div>
                 </div>
                 <div class="entity" style="background-image: url('business2-bg.jpg');">
                     <div class="entity-content">
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                            <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: bold;">Mr. Vrushabh Hupare</span>
+                            <a href="tel:+918208609213" style="color:inherit;text-decoration:none;"><span style="font-size: 0.85rem; color: var(--primary-color);"><i class="fas fa-phone"></i>+91 8208609213</span></a>
+                        </div>
                         <div class="entity-logo">
-                            <img src="business2-logo.png" alt="Business 2 Logo">
+                            <img src="assets/MT-logo.png" alt="Business 2 Logo">
                         </div>
                         <h4>Mahavir Traders</h4>
-                        <p>Supplier of all types of building materials including cement, crush, bricks, and more.</p>
-                        <h5>Proprietor: Mr. Vrushabh Hupare</h5>
-                        <p>Mobile: +91 7028671396</p>
-                        <p class="address">Near Rajmane Highschool, Rui, 416116</p>
+                        <p>Supplier of all types of building materials cement, crush, sand, etc.</p>
+                        
+                        <a href="https://maps.app.goo.gl/a95YX21SVR8d1AGo8" target="_blank" class="map-link">
+                            <span><i class="fas fa-map-marker-alt"></i>
+                            <p class="address">Near Rajmane Highschool, Rui, 416116</p></span>
+                        </a>
                     </div>
                 </div>
                 <div class="entity" style="background-image: url('assets/RajshreeHardwares-bg.jpeg');">
                     <div class="entity-content">
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                            <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: bold;">Mr. Vrushabh Hupare</span>
+                            <a href="tel:+918788900060" style="color:inherit;text-decoration:none;"><span style="font-size: 0.85rem; color: var(--primary-color);"><i class="fas fa-phone"></i>+91 8788900060</span></a>
+                        </div>
                         <div class="entity-logo">
                             <img src="assets/RajshreeHardwares-logo.png" alt="Rajshree Hardwares Logo">
                         </div>
                         <h4>Rajshree Hardwares</h4>
                         <p>All types of hardware—pipes, bolts, fittings & more.</p>
-                        <h5>Proprietor: Mr. Vrushabh Hupare</h5>
-                        <p>Mobile: +91 9764470013</p>
-                        <p class="address">Near Karmveer Multistate, Rui, 416116</p>
+                        
+                        <p class="address"><i class="fas fa-map-marker-alt"></i> Near Karmveer Multistate, Rui, 416116</p>
+                    </div>
+                </div>
+                <!-- Arihant architect -->
+                <div class="entity" style="background-image: url('assets/temp.jpg');">
+                    <div class="entity-content">
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                            <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: bold;">Er. Vrushabh Hupare</span>
+                            <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: bold;">Er. Rohit Murchite</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                            <a href="tel:+918208609213" style="color:inherit;text-decoration:none;"><span style="font-size: 0.85rem; color: var(--primary-color);"><i class="fas fa-phone"></i>+91 8208609213</span></a>
+                            <a href="tel:+918421182115" style="color:inherit;text-decoration:none;"><span style="font-size: 0.85rem; color: var(--primary-color);"><i class="fas fa-phone"></i>+91 8421182115</span></a>
+                        </div>
+                        <div class="entity-logo">
+                            <img src="assets/AA-logo.jpeg" alt="Arihant Architect">
+                        </div>
+                        <h4>Arihant Architect</h4>
+                        <p>Contractor, Builders & Developers.</p>
+                        <a href="https://maps.app.goo.gl/k5DvgGEm9UBC8k7b8" target="_blank" class="map-link">
+                            <span><i class="fas fa-map-marker-alt"></i>
+                            <p class="address">Mahavir Traders, Rui, 416116</p></span>
+                        </a>
                     </div>
                 </div>
             </div>

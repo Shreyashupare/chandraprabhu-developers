@@ -130,6 +130,11 @@ body {
     background: rgba(255, 255, 255, 0.9);
     padding: 10px 20px;
     border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -137,6 +142,19 @@ body {
     color: var(--primary-color);
     font-size: 2rem;
     margin: 0;
+}
+
+@media (max-width: 768px) {
+    .couple-names {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+    }
+    .couple-names h2 {
+        font-size: 0.8rem;
+    }
 }
 
 .couple-info {
@@ -351,7 +369,7 @@ body {
 .english-quote {
     font-size: 1.2rem;
     font-family: 'Playfair Display', serif;
-    color: #333;
+    color: #f34343;
     line-height: 1.5;
 }
 
@@ -414,7 +432,7 @@ body {
     }
 
     .couple-names h2 {
-        font-size: 1.5rem;
+        font-size: 1.0rem;
     }
 
     .couple-info {
@@ -549,7 +567,7 @@ body {
     }
 
     .couple-names h2 {
-        font-size: 1.5rem;
+        font-size: 1.0rem;
     }
 
     .couple-info {
@@ -587,7 +605,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 80px 20px;
+    padding: 60px 20px;
     position: relative;
     overflow: hidden;
 }
@@ -634,7 +652,7 @@ body {
 
 .event-item {
     background: rgba(255, 255, 255, 0.9);
-    padding: 30px;
+    padding: 20px;
     border-radius: 15px;
     width: 300px;
     text-align: center;
@@ -667,7 +685,7 @@ body {
 /* Mobile Responsive Event Details */
 @media (max-width: 768px) {
     .event-details {
-        padding: 60px 15px;
+        padding: 30px 15px;
     }
 
     .event-timing-title {
@@ -799,7 +817,7 @@ body {
 
 .business-entities {
     margin-top: 20px;
-    padding: 20px 0;
+    padding: 10px 0 0 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     z-index: 10;
@@ -809,12 +827,11 @@ body {
 .entity-grid {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
 }
 
 .entity {
     background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
     transition: transform 0.3s ease;
     flex: 1;
@@ -822,6 +839,8 @@ body {
     max-height: 350px;
     position: relative;
     overflow: hidden;
+    margin: 10px;
+    border: 1px solid wheat;
 }
 
 .entity-content {
@@ -831,7 +850,6 @@ body {
     text-align: center;
     position: relative;
     z-index: 2;
-    padding: 10px 0;
 }
 
 .entity-logo {
@@ -884,13 +902,13 @@ body {
     .entity-grid {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
     }
 
     .entity {
         min-width: 100%;
-        margin: 15px 0;
+        margin: 10px 0;
         max-height: 400px;
+        background-position: center !important;
     }
 
     .entity-logo {
@@ -934,8 +952,8 @@ body {
 .footer {
     background: #1a1a1a;
     color: white;
-    padding: 40px 0;
-    margin-top: 40px;
+    padding: 20px 0;
+    margin-top: 20px;
 }
 
 .footer-content {
@@ -1063,8 +1081,7 @@ body {
     .footer-content {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
-        padding: 20px;
+        padding: 10px;
     }
 
     .footer-left {
@@ -1074,7 +1091,6 @@ body {
 
     .footer-right {
         text-align: center;
-        margin-bottom: 20px;
     }
 
     .business-indicator {
@@ -1082,14 +1098,17 @@ body {
     }
 
     .contact-info {
+        flex-direction: row;
         justify-content: center;
-        gap: 15px;
+        gap: 20px;
+        flex-wrap: wrap;
     }
 
     .contact-item {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        gap: 5px;
+        gap: 6px;
+        font-size: 0.9rem;
     }
 
     .contact-item i {
@@ -1104,7 +1123,6 @@ body {
     .entity-grid {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
     }
 
     .entity {
@@ -1159,7 +1177,7 @@ body {
     }
 
     .entity {
-        padding: 15px;
+        padding: 10px;
         max-height: 350px;
     }
 
