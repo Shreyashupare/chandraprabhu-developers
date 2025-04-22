@@ -1169,6 +1169,8 @@ body {
     .footer-credit {
         padding: 8px 0;
         font-size: 0.7rem;
+        text-align: left;
+        margin-left: 16px;
     }
 
     .footer-credit i {
@@ -1178,6 +1180,10 @@ body {
 
 /* Extra Small Screens */
 @media (max-width: 480px) {
+    .footer-credit {
+        text-align: left;
+        margin-left: 16px;
+    }
     .footer-content {
         padding: 15px;
     }
