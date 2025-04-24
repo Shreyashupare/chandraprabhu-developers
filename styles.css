@@ -882,13 +882,15 @@ body {
 }
 
 .entity h4 {
-    color: #ff3737;
+    color: #e22020;
     opacity: 0.9;
     margin: 5px 0;
     font-size: 1.1rem;
-    font-weight: bold;
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    font-weight: 1000;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.1px;
+    line-height: 1.2;
 }
 
 .entity p {
@@ -930,7 +932,7 @@ body {
     }
 
     .entity h4 {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .entity p, .entity h5 {
@@ -1151,7 +1153,7 @@ body {
     }
 
     .entity h4 {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .entity p, .entity h5 {
@@ -1171,6 +1173,7 @@ body {
         font-size: 0.7rem;
         text-align: left;
         margin-left: 16px;
+        margin-bottom: 30px;
     }
 
     .footer-credit i {
@@ -1183,6 +1186,7 @@ body {
     .footer-credit {
         text-align: left;
         margin-left: 16px;
+        margin-bottom: 30px;
     }
     .footer-content {
         padding: 15px;
@@ -1207,7 +1211,7 @@ body {
     }
 
     .entity h4 {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
     }
 
     .entity p, .entity h5 {
