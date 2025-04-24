@@ -106,13 +106,13 @@
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
     .emoji-container {
-        bottom: 40px;
+        bottom: 60px;
         right: 10px;
         gap: 10px;
     }
 
     .emoji-prompt {
-        bottom: 80px;
+        bottom: 100px;
         right: 25px;
     }
     .emoji-button {
